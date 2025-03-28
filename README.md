@@ -79,6 +79,9 @@ CREATE DATABASE CountryInfo;
 CREATE SCHEMA country_infos;
 go run migrations/migrate.go
 
+📜 License
+This project is licensed under the MIT License.
+
 3️⃣ Running the API
 With Go : go run cmd/main.go 
 
