@@ -15,10 +15,14 @@ CountryInfo API is a **Golang-based microservice** that provides country-related
 ## 🏗 Project Structure
 country-api/
 │── cmd/                     # Entry points for the application
+
 │   ├── main.go              # Main application entry point
+
 │
 │── internal/                # Business logic (not exposed externally)
+
 │   ├── country/             # Country-related business logic
+
 │   │   ├── handler.go       # HTTP handlers for country APIs
 │   │   ├── service.go       # Business logic for countries
 │   │   ├── repository.go    # Database access layer for countries
