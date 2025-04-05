@@ -26,7 +26,11 @@ func main() {
 
 	r := gin.Default()
 	r.GET("/countries", countryHandler.GetCountries)
+	r.GET("/countries/id/:id", countryHandler.GetCountryById)
+	r.GET("/countries/code/:code", countryHandler.GetCountryByCode)
 	r.GET("/economies", economyHandler.GetEconomies)
+	r.GET("/economies/id/:id", economyHandler.GetEconomyById)
+	r.GET("/economies/country_id/:country_id", economyHandler.GetEconomyByCountryId)
 
 	log.Println("Starting server on :8080...")
 	r.Run(":8080")

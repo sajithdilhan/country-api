@@ -1,6 +1,8 @@
 package country
 
 import (
+	"fmt"
+
 	"gorm.io/gorm"
 )
 
@@ -19,4 +21,24 @@ func (r *Repository) GetAllCountries() ([]Country, error) {
 		return nil, result.Error
 	}
 	return countries, nil
+}
+
+func (r *Repository) GetCountryById(id int) (*Country, error) {
+	var country Country
+	fmt.Println("id", id)
+	result := r.db.Table("country_infos.countries").Where("id = ?", id).First(&country)
+	fmt.Println("country", country)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &country, nil
+}
+
+func (r *Repository) GetCountryByCode(code string) (*Country, error) {
+	var country Country
+	result := r.db.Table("country_infos.countries").Where("code = ?", code).First(&country)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &country, nil
 }
