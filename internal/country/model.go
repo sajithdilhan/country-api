@@ -9,8 +9,9 @@ type Country struct {
 	Continent        string
 	Capital          string
 	OfficialLanguage string
-	Area             int
+	Area             int `gorm:"column:area_sq_km"`
 	Population       int
 	Currency         string
 	CreatedAt        time.Time
+	UpdatedAt        time.Time
 }
